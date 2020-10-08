@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Editor from "./components/Editor";
 import "./App.scss";
 let marked = require("marked");
 
@@ -21,18 +22,10 @@ class App extends Component {
 
         <div style={containerStyle} className="container">
           <div className="col">
-            <h2>Editor</h2>
-            <div className="markdown-input">
-              <textarea
-                name="editor"
-                id="editor"
-                className="editor"
-                value={this.state.markdown}
-                onChange={(e) => {
-                  this.updateMarkdown(e.target.value);
-                }}
-              ></textarea>
-            </div>
+            <Editor
+              value={this.state.markdown}
+              updateMarkdown={this.updateMarkdown}
+            />
           </div>
           <div className="col">
             <h2>Preview</h2>
