@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.scss";
+let marked = require("marked");
 
 class App extends Component {
   constructor(props) {
@@ -9,6 +10,10 @@ class App extends Component {
     };
   }
 
+  updateMarkdown = (markdown) => {
+    this.setState({ markdown });
+  };
+
   render() {
     return (
       <div className="App">
@@ -17,13 +22,24 @@ class App extends Component {
         <div style={containerStyle} className="container">
           <div className="col">
             <h2>Editor</h2>
-            <div className="mark-input">
-              <textarea name="" id="editor" rows="10"></textarea>
+            <div className="markdown-input">
+              <textarea
+                name="editor"
+                id="editor"
+                className="editor"
+                value={this.state.markdown}
+                onChange={(e) => {
+                  this.updateMarkdown(e.target.value);
+                }}
+              ></textarea>
             </div>
           </div>
           <div className="col">
-            <h2>Previewer</h2>
-            <div id="preview"></div>
+            <h2>Preview</h2>
+            <div
+              id="preview"
+              dangerouslySetInnerHTML={{ __html: marked(this.state.markdown) }}
+            ></div>
           </div>
         </div>
       </div>
