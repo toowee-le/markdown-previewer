@@ -7,12 +7,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      markdown: "",
+      markdown: "# Hello Dev!",
     };
   }
 
-  updateMarkdown = (markdown) => {
-    this.setState({ markdown });
+  updateMarkdown = (event) => {
+    this.setState({ markdown: event.target.value });
   };
 
   render() {

@@ -6,14 +6,13 @@ export default function Editor(props) {
       <h2>Editor</h2>
       <div className="markdown-input">
         <textarea
-          name="editor"
+          name="markdown"
+          type="text"
           id="editor"
           className="editor"
           value={props.markdown}
-          onChange={(e) => {
-            props.updateMarkdown(e.target.value);
-          }}
-        ></textarea>
+          onChange={props.updateMarkdown}
+        />
       </div>
     </React.Fragment>
   );
