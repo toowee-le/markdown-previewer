@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Editor from "./components/Editor";
-import Highlight from "react-highlight.js";
 import "./App.scss";
 let marked = require("marked");
 
@@ -26,14 +25,22 @@ class App extends Component {
         <h1>Markdown Previewer</h1>
 
         <div className="markdown-container">
+          <header>
+            App.js - markdown-previewer
+            <div className="buttons">
+              <div className="button exit"></div>
+              <div className="button minimise"></div>
+              <div className="button maximise"></div>
+            </div>
+          </header>
           <div style={containerStyle} className="container">
-            <div className="col">
+            <div className="col markdown">
               <Editor
                 value={this.state.value}
                 updateMarkdown={this.updateMarkdown}
               />
             </div>
-            <div className="col">
+            <div className="col preview">
               <h2>Preview</h2>
               <div
                 id="preview"
@@ -41,6 +48,7 @@ class App extends Component {
               ></div>
             </div>
           </div>
+          <footer>Designed by Toowee</footer>
         </div>
       </div>
     );
@@ -58,27 +66,9 @@ const placeholder = `
   * See HTML in the right
   * **Cool right?**
   
-  ![Gif](https://media.giphy.com/media/MFYewrNPPkUzUUKVXa/giphy.gif)
+  ![gif](https://media.giphy.com/media/MFYewrNPPkUzUUKVXa/giphy.gif)
 
   You can also include a code block by wrapping the code snippet between three backticks on both sides.
-
-  \`\`\` 
-  // Basic syntax of writing a React class component
-  class MyComponent extends React.Component {
-    constructor(props) {
-      super(props)
-    }
-
-    render() {
-      return (
-        <div>
-          <h1>Hello World!</h1>
-        </div>
-      )
-    }
-  }
-  ReactDOM.render(<MyComponent />, document.getElementbyId('root'))
-  \`\`\`
 
   This markdown previewer was built with React and uses the \`Marked.js\` library. Find the \`Marked.js\` documentation [here](https://marked.js.org/).
 `;

@@ -1,18 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto:wght@300&display=swap");
+
+$main-font: "Roboto", sans-serif;
+$code-font: "Roboto Mono", monospace;
+
 .App {
+  font-family: $main-font;
   text-align: center;
 }
 
-.markdown-container {
-  border: 1px solid red;
+/* Header */
+header {
+  position: relative;
+  background: #2c2c2c;
+  border-radius: 5px 5px 0 0;
+  padding: 0.5em 0.8em;
+  font-size: 0.8rem;
+  color: #fff;
 
+  .buttons {
+    display: flex;
+    position: absolute;
+    top: 8px;
+
+    .button {
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      margin-right: 0.4em;
+    }
+
+    .exit {
+      background: #ef5e4f;
+    }
+
+    .minimise {
+      background: #f2b13b;
+    }
+
+    .maximise {
+      background: #3dcc36;
+    }
+  }
+}
+
+/* Main App */
+.markdown-container {
   h2 {
     margin: 0;
   }
+
+  .col {
+    width: 50%;
+    text-align: left;
+  }
+
+  .markdown {
+    background: #1e1e1e;
+    width: 100%;
+    color: blue;
+  }
+
+  .preview {
+    width: 100%;
+  }
+}
+
+/* Rendered HTML from markdown */
+img[alt="gif"] {
+  width: 100%;
+  overflow: hidden;
 }
 
 blockquote {
   color: #666;
   margin: 0;
-  padding-left: 3em;
+  padding-left: 1em;
   border-left: 0.5em #eee solid;
 }
