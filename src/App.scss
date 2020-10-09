@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.markdown-container {
+  border: 1px solid red;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+blockquote {
+  color: #666;
+  margin: 0;
+  padding-left: 3em;
+  border-left: 0.5em #eee solid;
+}
