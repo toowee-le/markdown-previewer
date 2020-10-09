@@ -7,12 +7,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      markdown: "# Hello Dev!",
+      value: placeholder,
     };
   }
 
   updateMarkdown = (event) => {
-    this.setState({ markdown: event.target.value });
+    this.setState({ value: event.target.value });
   };
 
   render() {
@@ -23,7 +23,7 @@ class App extends Component {
         <div style={containerStyle} className="container">
           <div className="col">
             <Editor
-              value={this.state.markdown}
+              value={this.state.value}
               updateMarkdown={this.updateMarkdown}
             />
           </div>
@@ -31,7 +31,7 @@ class App extends Component {
             <h2>Preview</h2>
             <div
               id="preview"
-              dangerouslySetInnerHTML={{ __html: marked(this.state.markdown) }}
+              dangerouslySetInnerHTML={{ __html: marked(this.state.value) }}
             ></div>
           </div>
         </div>
@@ -39,6 +39,8 @@ class App extends Component {
     );
   }
 }
+
+const placeholder = `# Hello Dev!`;
 
 const containerStyle = {
   display: "grid",

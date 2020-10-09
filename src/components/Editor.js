@@ -7,11 +7,11 @@ export default function Editor(props) {
       <div className="markdown-input">
         <textarea
           name="markdown"
-          type="text"
           id="editor"
           className="editor"
-          value={props.markdown}
+          value={props.value}
           onChange={props.updateMarkdown}
+          rows={10}
         />
       </div>
     </React.Fragment>
