@@ -60,7 +60,7 @@ const placeholder = `# Hello Dev!\n---\n\n## Welcome to my markdown previewer. G
 
   * Type some markdown on the left
   * See HTML in the right
-  * **Cool right?**\n\n![gif](https://media.giphy.com/media/MFYewrNPPkUzUUKVXa/giphy.gif)\n\nYou can also include a code block by wrapping the code snippet between three backticks on both sides like so:\n\n\`\`\`console.log("Hello World, this is a code block.")\`\`\`\n\nThis markdown previewer was built with React and uses the \`Marked.js\` library. Find the \`Marked.js\` documentation [here](https://marked.js.org/).
+  * **Cool right?**\n\n![gif](https://media.giphy.com/media/MFYewrNPPkUzUUKVXa/giphy.gif)\n\nYou can also include a code block by wrapping the code snippet between three backticks on both sides like so:\n\n\`\`\`\nconsole.log("Hello World, this is a code block.")\n\`\`\`\n\nThis markdown previewer was built with React and uses the \`Marked.js\` library. Find the \`Marked.js\` documentation [here](https://marked.js.org/).
 `;
 
 const containerStyle = {
