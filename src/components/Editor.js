@@ -3,7 +3,7 @@ import React from "react";
 export default function Editor(props) {
   return (
     <React.Fragment>
-      <h2 className="subheading">Markdown Editor</h2>
+      <h2 className="subheading">Editor</h2>
       <div className="markdown-input">
         <textarea
         style={textareaStyle}
